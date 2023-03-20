@@ -1,7 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* --eggshell: #f4f1deff;
+--burnt-sienna: #e07a5fff;
+--delft-blue: #3d405bff;
+--cambridge-blue: #81b29aff;
+--sunset: #f2cc8fff; */
 body {
-    background-color: #FFE5D9;
+    background-image: url(https://t4.ftcdn.net/jpg/04/19/44/53/360_F_419445354_5en1E5BPtsXW2lGXmwNAqNgN9q4ymk7h.jpg);
     margin: 5%;
 }
-#login h3, h2{
+#login {
+    background-color: #f0d9b5bd;
     align-self: center;
+    width: 100%;
+    height: 100%;
+    border-style: dotted;
+    border-color: #F2CC8F;
 }
+h2 {
+    text-align: center;
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 300%;
+}
+
