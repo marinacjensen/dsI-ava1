@@ -11,13 +11,15 @@
 <body>
     <div id="login">
         <h2>Bem-vindo(a)!</h2>
-        <h3>Faça login ou <a href="registro.html">registre-se.</a></h3>
-        <form action="cliente.php" method="post">
-            <label for="user">Usuário:</label>
-            <input type="text" name="user" id="user"> <br>
-            <label for="senha">Senha:</label>
-            <input type="password" name="senha" id="senha">
-        </form>
+        <h3>Faça login ou <a href="registro.html">registre-se</a>.</h3>
+        <div id="form">
+            <form action="cliente.php" method="post">
+                <label for="user">Usuário:</label>
+                <input type="text" name="user" id="user"> <br>
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha">
+            </form>
+        </div>
     </div>
 </body>
 </html>
