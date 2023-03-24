@@ -15,9 +15,10 @@
         <div id="form">
             <form action="cliente.php" method="post">
                 <label for="user">Usuário:</label>
-                <input type="text" name="user" id="user"> <br>
+                <input type="text" name="user" id="user" class="form"><br>
                 <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha">
+                <input type="password" name="senha" id="senha" class="form"><br>
+                <input type="submit" name="entrar" value="Entrar" class="button">
             </form>
         </div>
     </div>
