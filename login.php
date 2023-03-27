@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div id="login">
+    <div id="box">
         <h2>Bem-vindo(a)!</h2>
         <h3>Faça login ou <a href="registro.html">registre-se</a>.</h3>
         <div id="form">
@@ -18,7 +18,7 @@
                 <input type="text" name="user" id="user" class="form"><br>
                 <label for="senha">Senha:</label>
                 <input type="password" name="senha" id="senha" class="form"><br>
-                <input type="submit" name="entrar" value="Entrar" class="button">
+                <button type="submit" name="submit">Entrar</button>
             </form>
         </div>
     </div>
