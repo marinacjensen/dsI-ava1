@@ -11,7 +11,23 @@
 <body>
     <div id="box">
         <h2>Bem-vindo(a)!</h2>
+        <?php
+            if(!empty($_GET['msg'])){
+                if ($_GET['msg'] == "OK"){
+        ?>
+            <h3>Registro concluído! Faça login para continuar.</h3>
+        <?php
+
+                }
+            }
+        
+            else {
+
+        ?>
         <h3>Faça login ou <a href="registro.html">registre-se</a>.</h3>
+        <?php
+            }
+        ?>
         <div id="form">
             <form action="cliente.php" method="post">
                 <label for="user">Usuário:</label>

@@ -54,12 +54,14 @@ label {
 .form {
     margin-bottom: 3%;
     background-color: #fae06b;
-    border-radius: 30px;
+    width: 60%;
+    height: 15%;
+    font-family: monospace;
 }
 
 button {
     position: relative;
-    left: 55%;
+    left: 60%;
     border: solid 2px black;
     border-radius: 12px;
     width: 80px;
@@ -73,4 +75,15 @@ button:hover {
     background-color: #fae06b;
     transition: 0.5s;
     cursor: pointer;
+}
+
+.success {
+    background-color: #FFD33B;
+    position: relative;
+    bottom: 200%;
+    width: 100%;
+}
+
+.success p {
+    font-family: 'Ubuntu Mono', monospace;
 }
