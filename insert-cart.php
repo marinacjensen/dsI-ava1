@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style2.css">
+    <title>Registro de Cartucho</title>
+</head>
+
+<body>
+    <?php
+        session_start();
+    ?>
+    <div id="box">
+        <h2>Registre seu cartucho!</h2>
+        <?php
+            if (!empty($_POST['nome'])){
+                $nome = $_POST['nome'];
+                $sistema = $_POST['sistema'];
+                $tela = $_POST['tela'];
+                $ano = $_POST['ano'];
+                $id_user = $_SESSION['id'];
+                $conexao = mysqli_connect("localhost","root","","marina");
+                $query = "INSERT INTO cartuchos (nome,sistema,tela,ano,id_user) VALUES ('$nome','$sistema','$tela','$ano','$id_user')";
+                if (mysqli_query($conexao, $query)) {  
+                    header("Location: inicio.php");
+                };
+            };
+        ?>
+        <div id="form">
+            <form action="insert-cart.php" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" class="form"><br>
+                <label for="sistema">Sistema:</label>
+                <input type="text" name="sistema" id="sistema" class="form"><br>
+                <label for="tela">Tela (link da imagem):</label>
+                <input type="text" name="tela" id="tela" class="form"><br>
+                <label for="ano">Ano:</label>
+                <input type="text" name="ano" id="ano" class="form"><br>
+                <button type="submit" name="submit">Registrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
