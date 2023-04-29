@@ -42,7 +42,7 @@
                 <input type="text" name="user" id="user" class="form"><br>
                 <label for="senha">Senha:</label>
                 <input type="password" name="senha" id="senha" class="form"><br>
-                <button type="submit" name="submit">Entrar</button>
+                <button type="submit" name="submit" class = "button">Entrar</button>
             </form>
         </div>
     </div>

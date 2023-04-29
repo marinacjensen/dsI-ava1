@@ -28,7 +28,7 @@
     ?>
     <div id="box">
         <h3>Resultado:</h3>
-        <p>Existem <?php echo $contagem;?> cartuchos do sistema <?php echo $sistema;?>.</p>
+        <p>Existe(m) <?php echo $contagem;?> cartuchos do sistema <?php echo $sistema;?>.</p>
     </div>
 </body>
 </html>

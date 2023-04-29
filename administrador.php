@@ -23,12 +23,12 @@
             <form action="pesquisa-cartucho.php" method="post">
                 <label for="pesquisa">Nome do cartucho:</label>
                 <input type="text" name="pesquisa" id="pesquisa" class="form"><br>
-                <button type="submit" name="submit">Pesquisar</button>
+                <button type="submit" name="submit" class = "button">Pesquisar</button>
             </form>
             <form action="pesquisa-sistema.php" method="post">
                 <label for="pesquisa-s">Nome do sistema:</label>
                 <input type="text" name="pesquisa-s" id="pesquisa-s" class="form"><br>
-                <button type="submit" name="submit">Pesquisar</button>
+                <button type="submit" name="submit" class = "button">Pesquisar</button>
             </form>
         </div>    
     </div>

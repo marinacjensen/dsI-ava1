@@ -59,7 +59,7 @@ label {
     font-family: monospace;
 }
 
-button {
+.button {
     position: relative;
     left: 60%;
     border: solid 2px black;
@@ -71,7 +71,7 @@ button {
     font-weight: bold;
 }
 
-button:hover {
+.button:hover {
     background-color: #fae06b;
     transition: 0.5s;
     cursor: pointer;

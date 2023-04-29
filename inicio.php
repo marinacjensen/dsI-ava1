@@ -34,19 +34,41 @@
     </tr>
   </thead>
   <tbody>
-
+      <tr>
 <?php
+  $conexao = mysqli_connect("localhost","root","","marina");
+  if (!empty($_POST["delete_cart"])){
+
+    $delete = $_POST["delete_cart"];
+    $query_del = "DELETE FROM cartuchos WHERE id=$delete";
+    mysqli_query($conexao,$query_del);
+
+  }
   $id = $_SESSION['id']; 
-  $conexao = mysqli_connect("localhost","root","","marina"); 
   $query = "SELECT * FROM cartuchos WHERE id_user = $id";
   $resultado = mysqli_query($conexao, $query);
   while($linha = mysqli_fetch_array($resultado)){
-    echo "<tr><td>".$linha['nome']."</td>
+    echo "<td>".$linha['nome']."</td>
     <td>".$linha['sistema']."</td>
     <td class = 'tela'><img src='".$linha['tela']."'></td>
-    <td class = 'ano-td'>".$linha['ano']."</td> </tr>";
-  }
+    <td class = 'ano-td'>".$linha['ano']."</td>";
 ?>
+  <td>
+    <form method = "post" action="atualiza_cart.php">
+    <input type = "hidden" id="inputHidden" name="atualiza_cart" value=<?php echo $linha['id']; ?>>  
+      <button type = "submit" class="btn btn-info btn-xs"  >Editar</button> 
+    </td>
+    </form>  
+    <td>
+    <form method = "post" action="inicio.php">
+    <input type = "hidden" id="inputHidden" name="delete_cart" value=<?php echo $linha['id']; ?> >  
+      <button type = "submit" class="btn btn-danger btn-xs"  >Excluir</button> 
+    </td></tr>
+    </form>
+  </tbody>
+  <?php
+  }
+  ?>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

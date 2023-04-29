@@ -137,7 +137,7 @@ label {
     font-family: monospace;
 }
 
-button {
+.button {
     position: relative;
     background-color: #FFD33B;
     left: 70%;
@@ -150,7 +150,7 @@ button {
     font-weight: bold;
 }
 
-button:hover {
+.button:hover {
     background-color: #fae06b;
     transition: 0.5s;
     cursor: pointer;

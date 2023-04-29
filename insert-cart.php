@@ -35,12 +35,22 @@
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome" class="form"><br>
                 <label for="sistema">Sistema:</label>
-                <input type="text" name="sistema" id="sistema" class="form"><br>
+                <select name="sistema" id="sistema" class="form">
+                    <option value="Atari">Atari</option>
+                    <option value="NES">NES</option>
+                    <option value="Mega-drive">Mega-drive</option>
+                    <option value="Odyssey">Odyssey</option>
+                    <option value="Xbox">Xbox</option>
+                    <option value="PS1">PS1</option>
+                    <option value="PS2">PS2</option>
+                    <option value="PS3">PS3</option>
+                    <option value="MSX">MSX</option>
+                </select><br>
                 <label for="tela">Tela (link da imagem):</label>
                 <input type="text" name="tela" id="tela" class="form"><br>
                 <label for="ano">Ano:</label>
                 <input type="text" name="ano" id="ano" class="form"><br>
-                <button type="submit" name="submit">Registrar</button>
+                <button type="submit" name="submit" class = "button">Registrar</button>
             </form>
         </div>
     </div>
