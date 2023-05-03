@@ -36,7 +36,15 @@
                 <input type="text" name="nome" id="nome" class="form"><br>
                 <label for="sistema">Sistema:</label>
                 <select name="sistema" id="sistema" class="form">
-                    <option value="Atari">Atari</option>
+                    <?php
+                        $conexaosis = mysqli_connect("localhost", "root", "", "marina");
+                        $querysis = "SELECT nome FROM sistemas";
+                        $resultado = mysqli_query($conexaosis, $querysis);
+                          while($linha = mysqli_fetch_array($resultado)){
+                            echo "<option value='".$linha['nome']."'>".$linha['nome']."</option>";
+                          }
+                    ?>
+                    <!-- <option value="Atari">Atari</option>
                     <option value="NES">NES</option>
                     <option value="Mega-drive">Mega-drive</option>
                     <option value="Odyssey">Odyssey</option>
@@ -44,7 +52,7 @@
                     <option value="PS1">PS1</option>
                     <option value="PS2">PS2</option>
                     <option value="PS3">PS3</option>
-                    <option value="MSX">MSX</option>
+                    <option value="MSX">MSX</option> -->
                 </select><br>
                 <label for="tela">Tela (link da imagem):</label>
                 <input type="text" name="tela" id="tela" class="form"><br>

@@ -20,15 +20,65 @@
 	</nav>
     <div id="box">
         <div id="form">
-            <form action="pesquisa-cartucho.php" method="post">
+            <form action="administrador.php" method="post">
                 <label for="pesquisa">Nome do cartucho:</label>
                 <input type="text" name="pesquisa" id="pesquisa" class="form"><br>
+                <input type = "hidden" id="inputHidden" name="pesquisa-cart" value='1'>  
                 <button type="submit" name="submit" class = "button">Pesquisar</button>
             </form>
-            <form action="pesquisa-sistema.php" method="post">
+            <?php
+                if (!empty($_POST["pesquisa-cart"])){
+            ?>
+            <h3>Resultado:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome do cartucho</th>
+                        <th>Nome do usuário</th>
+                    </tr>
+                </thead>
+                <tbody>
+            <?php
+                $cartucho = $_POST['pesquisa'];
+                $conexao = mysqli_connect("localhost", "root", "", "marina");
+                $query = "SELECT u.nome, ca.id_user, ca.nome FROM cartuchos ca LEFT JOIN usuarios u ON u.id = ca.id_user WHERE ca.nome='$cartucho'";
+                $resultado = mysqli_query($conexao, $query);
+                while($linha = mysqli_fetch_array($resultado)){
+                    echo "<tr><td>".$linha["nome"]."</td>
+                    <td>".$linha["0"]."</td></tr>";
+                }
+            ?>
+                </tbody>
+            </table>
+            <?php
+                }
+            ?>
+            <form action="administrador.php" method="post">
                 <label for="pesquisa-s">Nome do sistema:</label>
                 <input type="text" name="pesquisa-s" id="pesquisa-s" class="form"><br>
+                <input type="hidden" id="inputHidden" name="pesquisa-sist" value='1'>
                 <button type="submit" name="submit" class = "button">Pesquisar</button>
+            </form>
+            <?php
+                if(!empty($_POST['pesquisa-sist'])){
+                    $sistema = $_POST['pesquisa-s'];
+                    $conexao = mysqli_connect("localhost", "root", "", "marina");
+                    $query = "SELECT nome FROM cartuchos WHERE sistema='$sistema'";
+                    $resultado = mysqli_query($conexao, $query);
+                    $contagem = 0;
+                    while($linha = mysqli_fetch_array($resultado)){
+                        $contagem++;
+                    }
+            ?>
+                <h3>Resultado:</h3>
+                <p>Existe(m) <?php echo $contagem;?> cartuchos do sistema <?php echo $sistema;?>.</p>
+            <?php
+                }
+            ?>
+            <form action="insert-sistema.php" method="post">
+                <label for="insert-sistema">Nome do sistema a ser inserido:</label>
+                <input type="text" name="insert-sistema" id="insert-sistema" class="form"><br>
+                <button type="submit" name="submit" class = "button">Inserir</button>
             </form>
         </div>    
     </div>
