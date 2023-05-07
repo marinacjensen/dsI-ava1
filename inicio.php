@@ -20,8 +20,9 @@
     <nav class="nav">
 		<div class="nav_title">Bem-vindo(a), <?php echo $_SESSION['user']?>!</div>
 		<ul class="nav_list">
-      <li class="nav__item"><a href="insert-cart.php" style="color:black;">Registrar Cartucho</a></li>
-			<li class="nav__item"><a href="logout.php" style="color:black;">Sair</a></li>
+      <li class="nav__item"><a href="./inserts/insert-cart.php" style="color:black;">Registrar Cartucho</a></li>
+      <li class="nav__item"><a href="./relatorio/usuario.php" style="color:black;">Relatório</a></li>
+      <li class="nav__item"><a href="logout.php" style="color:black;">Sair</a></li>
 		</ul>
 	</nav>
 <table>
@@ -38,8 +39,16 @@
 <?php
   $conexao = mysqli_connect("localhost","root","","marina");
   if (!empty($_POST["delete_cart"])){
-
     $delete = $_POST["delete_cart"];
+    $querydelete = "SELECT * FROM cartuchos WHERE id=$delete";
+    $historicor = mysqli_query($conexao,$querydelete);
+    $historico = mysqli_fetch_array($historicor);
+    $nomehist = $historico['nome'];
+    $sistemahist = $historico['sistema'];
+    $anohist = $historico['ano'];
+    $userhist = $historico['id_user'];
+    $query_hist = "INSERT INTO historico(id, nome, sistema, ano, user) VALUES ('$delete', '$nomehist', '$sistemahist', '$anohist', '$userhist')";
+    mysqli_query($conexao,$query_hist);
     $query_del = "DELETE FROM cartuchos WHERE id=$delete";
     mysqli_query($conexao,$query_del);
 

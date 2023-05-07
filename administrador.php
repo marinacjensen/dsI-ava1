@@ -15,6 +15,8 @@
     <nav class="nav-adm">
 	<div class="nav_title">Bem-vindo(a), administrador!</div>
 	<ul class="nav_list">
+        <li class="nav__item"><a href="./relatorio/admin.php" style="color:black;">Relatório</a></li>
+        <li class="nav__item"><a href="./relatorio/historico.php" style="color:black;">Histórico</a></li>
 		<li class="nav__item"><a href="logout.php" style="color:black;">Sair</a></li>
 	</ul>
 	</nav>
@@ -75,10 +77,15 @@
             <?php
                 }
             ?>
-            <form action="insert-sistema.php" method="post">
+            <form action="./inserts/insert-sistema.php" method="post">
                 <label for="insert-sistema">Nome do sistema a ser inserido:</label>
                 <input type="text" name="insert-sistema" id="insert-sistema" class="form"><br>
                 <button type="submit" name="submit" class = "button">Inserir</button>
+            </form>
+            <form action="delete-sistema.php" method="post">
+                <label for="delete-sistema">Nome do sistema a ser deletado:</label>
+                <input type="text" name="delete-sistema" id="delete-sistema" class="form"><br>
+                <button type="submit" name="submit" class = "button">Deletar</button>
             </form>
         </div>    
     </div>

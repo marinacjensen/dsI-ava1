@@ -9,8 +9,8 @@
     mysqli_query($conexao, $query);
 
     if (mysqli_query($conexao, $query)) {  
-        header("Location: index.php?msg=OK");
+        header("Location: /index.php?msg=OK");
     } else {
-        header("Location: index.php?msg=ERRO");
+        header("Location: /index.php?msg=ERRO");
     }
 ?>

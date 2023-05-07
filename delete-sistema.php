@@ -1,9 +1,9 @@
 <?php
-    $sistema = $_POST['insert-sistema'];
+    $sistema = $_POST['delete-sistema'];
 
     $conexao = mysqli_connect("localhost", "root", "", "marina");
 
-    $query = "INSERT INTO sistemas (nome) VALUES ('$sistema')";
+    $query = "DELETE FROM sistemas WHERE nome='$sistema'";
     mysqli_query($conexao, $query);
 
     if (mysqli_query($conexao, $query)) {  

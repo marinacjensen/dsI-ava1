@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style2.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style2.css">
     <title>Registro de Cartucho</title>
 </head>
 
@@ -26,7 +26,7 @@
                 $conexao = mysqli_connect("localhost","root","","marina");
                 $query = "INSERT INTO cartuchos (nome,sistema,tela,ano,id_user) VALUES ('$nome','$sistema','$tela','$ano','$id_user')";
                 if (mysqli_query($conexao, $query)) {  
-                    header("Location: inicio.php");
+                    header("Location: /inicio.php");
                 };
             };
         ?>
@@ -44,15 +44,6 @@
                             echo "<option value='".$linha['nome']."'>".$linha['nome']."</option>";
                           }
                     ?>
-                    <!-- <option value="Atari">Atari</option>
-                    <option value="NES">NES</option>
-                    <option value="Mega-drive">Mega-drive</option>
-                    <option value="Odyssey">Odyssey</option>
-                    <option value="Xbox">Xbox</option>
-                    <option value="PS1">PS1</option>
-                    <option value="PS2">PS2</option>
-                    <option value="PS3">PS3</option>
-                    <option value="MSX">MSX</option> -->
                 </select><br>
                 <label for="tela">Tela (link da imagem):</label>
                 <input type="text" name="tela" id="tela" class="form"><br>
