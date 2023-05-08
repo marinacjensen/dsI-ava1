@@ -77,6 +77,29 @@
             <?php
                 }
             ?>
+            <form action="administrador.php" method="post">
+                <label for="cart-antigo">Cartucho mais antigo:</label>
+                <input type = "hidden" id="inputHidden" name="cart-antigo" value='1' class="form">  
+                <button type="submit" name="submit" class = "button-1">Pesquisar</button>
+            </form>
+            <?php
+                if(!empty($_POST['cart-antigo'])){
+                    $ano_cart = 2000;
+                    $antigo = "";
+                    $conexao = mysqli_connect("localhost", "root", "", "marina");
+                    $query = "SELECT nome, ano FROM cartuchos";
+                    $resultado = mysqli_query($conexao, $query);
+                    while($linha = mysqli_fetch_array($resultado)){
+                        if ($linha['ano']<$ano_cart){
+                            $ano_cart = $linha['ano'];
+                            $antigo = $linha['nome'];
+                        }
+                    }
+            ?>
+                <p><?php echo $antigo; ?> (<?php echo $ano_cart; ?>).</p>
+            <?php
+                }
+            ?>
             <form action="./inserts/insert-sistema.php" method="post">
                 <label for="insert-sistema">Nome do sistema a ser inserido:</label>
                 <input type="text" name="insert-sistema" id="insert-sistema" class="form"><br>
